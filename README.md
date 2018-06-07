@@ -51,7 +51,7 @@ $ k8s-job-cleaner --label-group job --max-count 10 --in-cluster
 CronJob manifest sample:
 
 ```yaml
-apiVersion: batch/v2alpha1
+apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: k8s-job-cleaner
