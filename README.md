@@ -35,13 +35,7 @@ $ make install
 Docker image is available at [quay.io/dtan4/k8s-job-cleaner](https://quay.io/repository/dtan4/k8s-job-cleaner).
 
 ```bash
-# -t is required to colorize logs
-$ docker run \
-    --rm \
-    -t \
-    -v $HOME/.kube/config:/.kube/config \
-    quay.io/dtan4/k8s-job-cleaner:latest \
-      --label-group job
+docker run -it -v $HOME/.kube:/root/.kube moander/k8s-job-cleaner --label-group job
 ```
 
 ## Usage
@@ -85,7 +79,7 @@ spec:
         spec:
           containers:
           - name: k8s-job-cleaner
-            image: quay.io/dtan4/k8s-job-cleaner:latest
+            image: moander/k8s-job-cleaner:latest
             imagePullPolicy: Always
             command:
               - "/k8s-job-cleaner"
